@@ -1,0 +1,4 @@
+---- ENTRY 23-04-04_160621 ----
+23-04-04_0	it is working better now.
+23-04-04_1	hahahahaha
+23-04-04_2	okay i am going to push a commit on this project.

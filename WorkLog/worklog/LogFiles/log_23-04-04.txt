@@ -1,0 +1,4 @@
+---- ENTRY 23-04-04_160304 ----
+23-04-04_0	Test entry about something.
+23-04-04_1	Another entry about something else.
+23-04-04_2	Wow. I have a lot to say today.
