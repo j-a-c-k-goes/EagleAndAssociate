@@ -82,4 +82,4 @@ These methods handle modifying and viewing saved entries.
 * Option to restore deleted files.
 
 ## Credit
-[Jack L.](hhttps://www.linkedin.com/in/jacklester/)
+[Jack L.](https://www.linkedin.com/in/jacklester/)
