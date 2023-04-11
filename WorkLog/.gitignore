@@ -1,8 +1,2 @@
-./DS_Store
-./*/DS_Store
-./*/*/DS_Store
-./*/*/*/DS_Store
-/tests/
-worklog/__pycache__/
-worklog/*/__pycache__/
-worklog/py
+worklog/.DS_Store
+tests/

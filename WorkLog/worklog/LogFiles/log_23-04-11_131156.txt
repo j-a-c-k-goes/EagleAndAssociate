@@ -1,0 +1,3 @@
+---- ENTRY 23-04-11_131156 ----
+23-04-11_0	This WorkLog application can be useful. Please factor in the participant loop.
+23-04-11_1	Next update: Confirm after input.

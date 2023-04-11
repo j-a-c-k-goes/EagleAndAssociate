@@ -12,12 +12,12 @@ class LogHandler:
         self.deleted_logs = dict()
     def get_log_list(self):
         try:
-            print("These are current log files:\n")
+            print("--- Entries (filenames) ---")
             for file in os.listdir(self.log_directory):
                 if file[0] == ".":
-                    print("Hidden file.")
+                    print(" [ hidden file ] ")
                 else:
-                    print( file )
+                    print( "|---> ", file )
         except FileNotFoundError:
             print("An invalid path has been provided.")
     def delete_log(self, log_name:str):
@@ -44,15 +44,16 @@ class LogHandler:
             print(log_name, "Does not exist.")
     def read_recent(self):
         try:
-            print("This is the most recent log's entries:")
-            if (len(os.listdir(self.log_directory))) > 0:
-                most_recent = (os.listdir(self.log_directory)[-1])
-                path = f"{ self.log_directory }{ most_recent }"
+            print("\n---- Recent entries ----")
+            directory_has_content = (len(os.listdir(self.log_directory))) > 0
+            if directory_has_content:
+                most_recent_content = (os.listdir(self.log_directory)[-1])
+                path = f"{ self.log_directory }{ most_recent_content }"
                 with open(path, "r") as source:
                     print(source.read())
-                print("Done.")
+                print("End of most recent entries.\n")
             else:
-                print("There are no logs to read.")
+                print("There are no entries to read.")
         except FileNotFoundError:
             print("Invalid path.")
     def view_deleted(self):

@@ -1,0 +1,2 @@
+---- ENTRY 23-04-11_130135 ----
+23-04-11_0	Strings should grow from null.

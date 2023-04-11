@@ -35,14 +35,15 @@ class Entry:
         try:
             counter = 0
             making_an_entry = True
+            print("\n---- Making an Entry ---")
             while making_an_entry:
-                entry = str( input("Type your work journal entry >>> ") )
+                entry = str( input("Type your ❤️ in >>> ") )
                 self.set_current(entry)
                 date = datetime.datetime.now().strftime(f"%y-%m-%d_{counter}")
                 # time = datetime.datetime.now().strftime("%H:%M")
                 self.entries[ date ] = entry
                 self.get_current()
-                confirm = str(input("Still making entries? (y / n) "))
+                confirm = str(input("Still making entries??? (y / n) "))
                 if confirm.lower() == "y":
                     counter += 1
                 else:

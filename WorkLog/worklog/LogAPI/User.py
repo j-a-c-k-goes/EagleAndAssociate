@@ -9,8 +9,8 @@ import getpass
 import datetime
 class User:
     default_user = { "name": getpass.getuser(), 
-                     "role": "Operations Manager",
-                     "company": "Eagle & Associates" }
+                     "role": "Technology & Design Lead",
+                     "company": "NeoITD, Incorporated." }
     default_username = getpass.getuser()
     def __init__(self):
         self.today = datetime.datetime.now().strftime("%m %y %d — %H:%M:%S")
@@ -42,9 +42,9 @@ class User:
         except ValueError:
             print("A string is needed here.")
     def greet( self ):
-        print( self.today )
-        print(f"Current User: { self.username }, { self.role } @ { self.companyname }.")
-        print(f"Hello, { self.username }. Welcome to your WorkLog.\n")
+        print(f"\n---- { self.username.upper() } ----")
+        print(f"{ self.username } is the { self.role } @ { self.companyname }")
+        print( "Date:", self.today )
     def view( self ):
         for key, value in self.user.items():
             print(key, value)
