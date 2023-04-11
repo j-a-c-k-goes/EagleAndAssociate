@@ -3,9 +3,9 @@
 # Work Log
 
 ## Context
-The WorkLog is a Command-line Application for managing a personal work journal. Entires are saved as .txt files and stored within the `worklog/log` directory. 
+The WorkLog is a Command-line Application for managing a personal work journal. Entries are saved as .txt files and stored within the `worklog/LogFiles` directory. 
 
-This project was developed while working @ Eagle & Associates, a logistics firm.
+This project was developed while working @ Eagle & Associates, a logistics firm. I used the project to record and organize my day-to-day activites, questions, comments. It was nice to have something which was not dependent upon cloud-based solutions like Google Sheets, iOS Notes, etc. 
 
 ## Installation
 * Clone this repository.
@@ -78,8 +78,8 @@ These methods handle modifying and viewing saved entries.
 |          | `view_deleted`    | None                    | View deleted files ( for session )         |
 
 ## Future Work
-* Enable parsing of command line args for more customized usage.
+* Enable parsing of command line arguments for more liberal usage.
 * Option to restore deleted files.
 
 ## Credit
-[Jack L.](hhttps://www.linkedin.com/in/jacklester/)
+[Jack L.](https://www.linkedin.com/in/jacklester/)
