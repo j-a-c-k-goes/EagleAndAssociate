@@ -1,2 +1,10 @@
-worklog/.DS_Store
+./.DS_Store
+../.DS_Store
+./*/.DS_Store
+./*/*/.DS_Store
+worklog/LogAPI/__pycache__/
+worklog/LogFiles/
 tests/
+worklog/.DS_Store
+../WorkLog_0_0_0.zip
+poetry.lock

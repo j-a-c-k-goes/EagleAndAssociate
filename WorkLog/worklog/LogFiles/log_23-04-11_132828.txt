@@ -1,10 +1,7 @@
 ---- ENTRY 23-04-11_132828 ----
 23-04-11_0	Testing WorkLog's main loop.
----- ENTRY 23-04-11_132828 ----
-23-04-11_0	Should be able to trigger other commands @ loop start or end.
----- ENTRY 23-04-11_132828 ----
-23-04-11_0	The demo allow three entries before quitting.
-23-04-11_1	Why three though?
----- ENTRY 23-04-11_132828 ----
-23-04-11_0	For expected termination, increment the loop variable before invoking class methods.
-23-04-11_1	Why three though?
+23-04-11_1	Should be able to trigger other commands @ loop start or end.
+23-04-11_2	The demo allow three entries before quitting.
+23-04-11_3	Why three though?
+23-04-11_4	For expected termination, increment the loop variable before invoking class methods.
+23-04-11_5	Why three though?

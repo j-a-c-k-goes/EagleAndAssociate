@@ -2,19 +2,18 @@
 """
     @author Jack L.
     @name Entry.py
-    @datelastmodified 2023 04 04
+    @datelastmodified 2023 04 13
     @purpose Class handles work log entries.
 """
 
 # import modules
 import datetime
-# from edit_entry import *
 import os.path
 
 class Entry:
     def __init__(self):
         self.current = None         # Current Entry
-        self.entries = dict()       # This session's entries.
+        self.entries = dict()       # This session's entries. { 'date': 'entry' }
         self.date = datetime.datetime.now().strftime(f"%y-%m-%d_%H%M%S")
         self.destination = "./LogFiles/"
     def get_current(self):
@@ -54,12 +53,16 @@ class Entry:
             print("the entry should be a string.")
     def edit(self, entry_to_edit:str):
         try:
-            edit_this_entry = self.entries.get(entry_to_edit)
+            fallbackValue = "[ entry does not exist ]"
+            edit_this_entry = self.entries.get(entry_to_edit, fallbackValue)
             editing_an_entry = True
             while editing_an_entry:
-                if edit_this_entry is not False or edit_this_entry is not None:
-                    print("Entry being edited:", edit_this_entry)
-                    new_content = str( input( "Enter the new content to replace the entry >>> " ) )
+                if edit_this_entry.lower() == fallbackValue:
+                    print("There is no entry with this key ( date ). Exiting function.")
+                    break
+                if ( edit_this_entry is not False or edit_this_entry is not None) and (edit_this_entry is not fallbackValue):
+                    print(f"---- Entry being edited: { edit_this_entry } ----")
+                    new_content = str( input( "Enter the new content >>> " ) )
                     print("Your new content:", new_content)
                     confirm = str( input( "Is this ok? y / n >>> " ) )
                     if confirm.lower() == "y":
@@ -76,23 +79,26 @@ class Entry:
             print( "Also possible: You did not pass in a string." )
     def output( self ):
         try:
-            if len(self.entries) != 0:
-                print("There are entries to write to the destination.")
-                filename = f"log_{self.date}"
-                final_destination = f"{ self.destination }{ filename }.txt"
+            there_are_entries = (len( self.entries ) != 0)
+            if there_are_entries:
+                filename = f"log_{ self.date }.txt"
+                final_destination = f"{ self.destination }{ filename }"
+                print("Setting absolute path @", final_destination)
                 with open(final_destination, "a") as file:
-                    file.write(f"---- Entry {self.date} ----\n".upper())
                     for key, value in self.entries.items():
                         file.write( f"{ key }\t{ value }\n" )
-                print("Done writing to", final_destination)
+                print("Done writing to", filename)
             else:
                 print("There are no entries to write.")
                 return False
         except FileNotFoundError:
-            print( f"The destination { self.destination } is invalid." )
+            print( "Invalid destination", self.destination )
         except TypeError:
-            print( "This method requires a string." ) 
+            print( "Method requires a string." )
+    def view_current(self):
+        current = self.get_current()
+        print(current) 
     def view_all( self ):
         for key, value in self.entries.items():
-            print(f"{ key }\t{ value }")
+            print( f"{ key }\t{ value }" )
         print( "Done." )
